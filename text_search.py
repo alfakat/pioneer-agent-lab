@@ -16,7 +16,7 @@ query_embedding = embedding_model.encode(
     query,
     convert_to_tensor=True)
 
-cos_scores = util.cos_sim(query_embedding, corpus_embeddings)[0]
+cos_scores = util.cos_sim(query_embedding, corpus_embeddings)[0] # cosine similarity tells you how close two texts are in meaning
 
 top_k = min(5, len(corpus_texts))
 top_results = cos_scores.topk(k=top_k)
